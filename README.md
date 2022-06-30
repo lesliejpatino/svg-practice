@@ -10,6 +10,7 @@
 ## Technologies Used
 * Vue
 * Tailwind CSS Framework
+* Animate.css
 * HTML/CSS
 
 ## Resources Used
