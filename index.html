@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="app" class="h-screen container mx-auto" v-bind:style="{backgroundColor:bgColor}">
+
+        <div class="flex pt-10">
+
+            <div class="w-1/2">
+
+                <div class="relative character animate__animated animate__wobble animate__infinite pt-20">
+
+                    <!-- LEFT EYE -->
+                    <div class="absolute pin-t w-full flex justify-center ml-3 mt-3">
+                        <svg v-bind:style="{marginRight:eyeSpacing + 'px'}" width="56" height="34" viewBox="0 0 56 34"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M55.75 17C55.75 21.5736 52.6956 25.7554 47.6692 28.8071C42.6475 31.8561 35.6939 33.75 28 33.75C20.3061 33.75 13.3525 31.8561 8.33075 28.8071C3.30444 25.7554 0.25 21.5736 0.25 17C0.25 12.4264 3.30444 8.24457 8.33075 5.19288C13.3525 2.14394 20.3061 0.25 28 0.25C35.6939 0.25 42.6475 2.14394 47.6692 5.19288C52.6956 8.24457 55.75 12.4264 55.75 17Z"
+                                fill="#FCF9F9" stroke="black" stroke-width="0.5" />
+                            <path
+                                d="M41.5 16.5C41.5 24.2487 35.4395 30.5 28 30.5C20.5605 30.5 14.5 24.2487 14.5 16.5C14.5 8.75133 20.5605 2.5 28 2.5C35.4395 2.5 41.5 8.75133 41.5 16.5Z"
+                                v-bind:style="{fill:eyeColor}" stroke="black" />
+                            <ellipse cx="28" cy="16.5" rx="7" ry="7.5" fill="black" />
+                            <ellipse cx="31.5" cy="13" rx="3.5" ry="4" fill="#FCF9F9" />
+                        </svg>
+
+                        <!-- RIGHT EYE -->
+                        <svg v-bind:style="{marginLeft:eyeSpacing + 'px'}" width="56" height="34" viewBox="0 0 56 34"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M55.75 17C55.75 21.5736 52.6956 25.7554 47.6692 28.8071C42.6475 31.8561 35.6939 33.75 28 33.75C20.3061 33.75 13.3525 31.8561 8.33075 28.8071C3.30444 25.7554 0.25 21.5736 0.25 17C0.25 12.4264 3.30444 8.24457 8.33075 5.19288C13.3525 2.14394 20.3061 0.25 28 0.25C35.6939 0.25 42.6475 2.14394 47.6692 5.19288C52.6956 8.24457 55.75 12.4264 55.75 17Z"
+                                fill="#FCF9F9" stroke="black" stroke-width="0.5" />
+                            <path
+                                d="M41.5 16.5C41.5 24.2487 35.4395 30.5 28 30.5C20.5605 30.5 14.5 24.2487 14.5 16.5C14.5 8.75133 20.5605 2.5 28 2.5C35.4395 2.5 41.5 8.75133 41.5 16.5Z"
+                                v-bind:style="{fill:eyeColor}" stroke="black" />
+                            <ellipse cx="28" cy="16.5" rx="7" ry="7.5" fill="black" />
+                            <ellipse cx="31.5" cy="13" rx="3.5" ry="4" fill="#FCF9F9" />
+                        </svg>
+                    </div>
+
+
+                    <!-- NOSE -->
+                    <div class="absolute pin-t w-full flex justify-center ml-3 mt-9">
+                        <svg width="51" height="44" viewBox="0 0 51 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path v-bind:style="{fill:noseColor}"
+                                d="M1 33.5C4.5 29.8333 12.9 19.2 18.5 6V1H32L49.5 33.5L42.75 38.5L36 43.5H18.5L1 33.5Z"
+                                fill="" stroke="#FFF494" />
+                        </svg>
+                    </div>
+
+                    <!-- MOUTH -->
+                    <div v-if="mouthOption == 1" class="absolute bottom-6 right-14">
+                        <img src="images/mouth1.svg" width="110">
+                    </div>
+
+                    <div v-if="mouthOption == 2" class="absolute bottom-5 right-16">
+                        <img src="images/mouth2.svg" width="90">
+                    </div>
+
+                    <div v-if="mouthOption == 3" class="absolute bottom-0 right-14">
+                        <img src="images/mouth3.svg" width="110">
+                    </div>
+
+
+                    <!-- HEAD -->
+                    <div class="flex justify-center ml-5">
+                        <svg width="175" height="171" viewBox="0 0 175 171" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <ellipse v-bind:style="{fill:skinColor}" cx="87.5" cy="85.5" rx="87.5" ry="85.5" />
+                        </svg>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="flex flex-col bg-yellow-200 w-1/2 p-4">
+                <h1 id="edit-intro">Edit Your Creature</h1>
+
+                <div class="mb-4 w-full flex flex-col">
+                    <label for="bg_color">Background Color</label>
+                    <input id="bg_color" type="color" v-model="bgColor">
+                </div>
+
+                <div class="mb-4 w-full flex flex-col">
+                    <label for="skin_color">Skin Color</label>
+                    <input id="skin_color" type="color" v-model="skinColor">
+                </div>
+
+                <div class="mb-4 w-full flex flex-col">
+                    <label for="nose_color">Nose Color</label>
+                    <input id="nose_color" type="color" v-model="noseColor">
+                </div>
+
+                <div class="mb-4 w-full flex flex-col">
+                    <label for="eye_color">Eye Color</label>
+                    <input id="eye_color" type="color" v-model="eyeColor">
+                </div>
+
+                <div class="mb-4 w-full flex flex-col">
+                    <label for="eye_spacing">Eye Spacing</label>
+                    <input id="eye_spacing" type="range" max="100" v-model="eyeSpacing">
+                </div>
+
+                <div class="mb-4 w-full flex flex-col">
+                    <label for="mouth_option">Mouth Options</label>
+                    <select id="mouth_option" v-model="mouthOption">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue',
+                bgColor: 'white',
+                skinColor: 'blue',
+                noseColor: 'yellow',
+                eyeColor: 'red',
+                eyeSpacing: 25,
+                mouthOption: 3
+            }
+        })
+    </script>
+
+</body>
+
+</html>
