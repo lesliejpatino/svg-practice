@@ -25,4 +25,4 @@
 
 MIT License <br/>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <br/>
-Copyright (c) 2022 Pangta Huang, Joshua Meza, Elliot Park, Leslie Patino
+Copyright (c) 2022 Leslie Patino
